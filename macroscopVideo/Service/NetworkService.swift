@@ -9,15 +9,15 @@ import Foundation
 
 
 protocol NetworkServiceProtocol: AnyObject {
-    func request(completion: @escaping (Result<Camera, ApiError>) -> Void)
+    func request(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProtocol {
     
-    func request(completion: @escaping (Result<Camera, ApiError>) -> Void) {
+    func request(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void) {
 //        let url = ApiUrl.url()
         let url = URL(string: "http://demo.macroscop.com/configex?login=root&responsetype=json")
-        performRequest(with: url, type: Camera.self) { result in
+        performRequest(with: url, type: CamerasConfigex.self) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
