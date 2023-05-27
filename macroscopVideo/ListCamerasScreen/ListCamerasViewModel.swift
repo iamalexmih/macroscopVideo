@@ -24,7 +24,7 @@ class ListCamerasViewModel: ListCamerasViewModelProtocol {
     
     func fetchCameras() {
         eventHandler?(.startLoading)
-        networkService.request { [weak self] result in
+        networkService.requestListCameras { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let listCameras):

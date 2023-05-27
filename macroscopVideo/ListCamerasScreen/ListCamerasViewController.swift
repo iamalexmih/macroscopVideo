@@ -27,10 +27,7 @@ class ListCamerasViewController: ParentViewController {
     private func loadCameras() {
         viewModel.fetchCameras()
     }
-    
-    @objc override func restart(action: UIAlertAction) {
-        viewModel.fetchCameras()
-    }
+
     
     private func observeEvent() {
         self.viewModel.eventHandler = { [weak self] event in
@@ -42,7 +39,9 @@ class ListCamerasViewController: ParentViewController {
                 footerView.hideLoaderIndicate()
                 self.tableView.reloadData()
             case .error(let error):
-                self.showErrorAlert(error)
+                showErrorAlert(error) {
+                    self.viewModel.fetchCameras()
+                }
             }
         }
     }

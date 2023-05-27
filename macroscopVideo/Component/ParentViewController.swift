@@ -20,23 +20,6 @@ class ParentViewController: UIViewController {
     }
     
     
-    func showErrorAlert(_ error: ApiError?) {
-        guard let error = error else { return }
-        let message = "\(error.description)."
-        let action = UIAlertAction(title: "Restart",
-                                   style: .default,
-                                   handler: restart)
-        let alertLogOut = UIAlertController(title: "Oops",
-                                            message: message,
-                                            preferredStyle: .alert)
-        alertLogOut.addAction(action)
-        present(alertLogOut, animated: true)
-    }
-    
-    
-    @objc func restart(action: UIAlertAction) { }
-    
-    
     private func configTitle() {
         view.addSubviewAndTamic(topView)
         topView.addSubviewAndTamic(titleLabel)

@@ -9,16 +9,18 @@ import Foundation
 
 
 protocol NetworkServiceProtocol: AnyObject {
-    func request(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void)
+    func requestListCameras(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void)
+    func requestOneFrame(cameraId: String, completion: @escaping (Result<Data, ApiError>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProtocol {
     static let shared = NetworkService()
     private init() { }
     
-    func request(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void) {
-//        let url = ApiUrl.url()
-        let url = URL(string: "http://demo.macroscop.com/configex?login=root&responsetype=json")
+    
+    func requestListCameras(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void) {
+        let parameters = ApiUrl.configexParameters()
+        let url = ApiUrl.url(parameters, path: .configex)
         performRequest(with: url, type: CamerasConfigex.self) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -31,9 +33,11 @@ final class NetworkService: NetworkServiceProtocol {
         }
     }
     
-    func requestOneFrame(completion: @escaping (Result<Data, ApiError>) -> Void) {
-        let url = URL(string: "http://demo.macroscop.com/mobile?&channelid=773bad89-c18a-4e7e-a70d-c2a37897a92d&login=root&resolutionx=640&resolutiony=480&withcontenttype=true&oneframeonly=true")
     
+    func requestOneFrame(cameraId: String, completion: @escaping (Result<Data, ApiError>) -> Void) {
+//        let url = URL(string: "http://demo.macroscop.com/mobile?&channelid=773bad89-c18a-4e7e-a70d-c2a37897a92d&login=root&resolutionx=640&resolutiony=480&withcontenttype=true&oneframeonly=true")
+        let parameters = ApiUrl.oneFrameParameters(cameraId)
+        let url = ApiUrl.url(parameters, path: .mobile)
         
         guard let url = url else {
             completion(.failure(.urlNotCreate))
