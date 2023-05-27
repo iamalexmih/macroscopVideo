@@ -86,6 +86,14 @@ extension ListCamerasViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let oneFrameViewController = OneFrameViewController()
+        let camera = viewModel.listCameras[indexPath.row]
+        let viewModel = OneFrameViewModel(camera)
+        oneFrameViewController.viewModel = viewModel
+        navigationController?.pushViewController(oneFrameViewController, animated: true)
+    }
+    
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 255
 //    }

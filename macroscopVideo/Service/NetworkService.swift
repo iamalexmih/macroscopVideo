@@ -13,6 +13,8 @@ protocol NetworkServiceProtocol: AnyObject {
 }
 
 final class NetworkService: NetworkServiceProtocol {
+    static let shared = NetworkService()
+    private init() { }
     
     func request(completion: @escaping (Result<CamerasConfigex, ApiError>) -> Void) {
 //        let url = ApiUrl.url()

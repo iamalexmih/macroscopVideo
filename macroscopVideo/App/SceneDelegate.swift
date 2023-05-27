@@ -15,8 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let network = NetworkService()
-        let viewModel = ListCamerasViewModel(networkService: network)
+        let viewModel = ListCamerasViewModel()
         let viewController = ListCamerasViewController()
         let navController = UINavigationController(rootViewController: viewController)
         viewController.viewModel = viewModel

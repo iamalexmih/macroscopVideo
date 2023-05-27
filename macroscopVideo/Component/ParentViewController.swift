@@ -56,7 +56,7 @@ class ParentViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: topView.topAnchor, constant: 50),
             titleLabel.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
             
-            topView.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30)
+            topView.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor)
         ])
     }
 }

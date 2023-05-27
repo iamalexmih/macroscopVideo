@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  ListCamerasViewModel.swift
 //  macroscopVideo
 //
 //  Created by Алексей Попроцкий on 25.05.2023.
@@ -10,21 +10,17 @@ import Foundation
 protocol ListCamerasViewModelProtocol {
     var listCameras: [Channels] { get }
     var eventHandler: ((_ event: Event) -> Void)? { get set }
-    
-    init(networkService: NetworkServiceProtocol)
+    var networkService: NetworkServiceProtocol { get }
     func fetchCameras()
 }
 
 
 class ListCamerasViewModel: ListCamerasViewModelProtocol {
     
-    let networkService: NetworkServiceProtocol
+    let networkService: NetworkServiceProtocol = NetworkService.shared
     var listCameras: [Channels] = []
     var eventHandler: ((Event) -> Void)?
     
-    required init(networkService: NetworkServiceProtocol) {
-        self.networkService = networkService
-    }
     
     func fetchCameras() {
         eventHandler?(.startLoading)
