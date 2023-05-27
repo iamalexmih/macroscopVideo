@@ -23,6 +23,11 @@ class OneFrameViewController: UIViewController {
         configureUiElements()
         configureLayout()
         observeEvent()
+        loadOneFrame()
+    }
+    
+    
+    private func loadOneFrame() {
         viewModel.fetchOneFrame()
     }
     
@@ -38,7 +43,7 @@ class OneFrameViewController: UIViewController {
                 self.setFrame()
             case .error(let error):
                 showErrorAlert(error) {
-                    self.viewModel.fetchOneFrame()
+                    self.loadOneFrame()
                 }
             }
         }

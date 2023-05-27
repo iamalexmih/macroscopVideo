@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class ListCamerasViewController: ParentViewController {
+class ListCamerasViewController: UIViewController {
     
     var viewModel: ListCamerasViewModelProtocol!
     private let tableView = UITableView()
@@ -18,6 +18,7 @@ class ListCamerasViewController: ParentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Список камер"
         tableViewConfig()
         observeEvent()
         loadCameras()
@@ -60,9 +61,9 @@ extension ListCamerasViewController {
         tableView.tableFooterView = footerView
         
         view.addSubviewAndTamic(tableView)
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: topView.bottomAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 }
@@ -92,9 +93,4 @@ extension ListCamerasViewController: UITableViewDelegate, UITableViewDataSource 
         oneFrameViewController.viewModel = viewModel
         navigationController?.pushViewController(oneFrameViewController, animated: true)
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 255
-//    }
-
 }

@@ -21,7 +21,6 @@
 		B5FDD5D52A21436800E7FBE6 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5D42A21436800E7FBE6 /* UIView + ext.swift */; };
 		B5FDD5D82A21444F00E7FBE6 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5D72A21444F00E7FBE6 /* FooterView.swift */; };
 		B5FDD5DB2A2144FA00E7FBE6 /* CameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5DA2A2144FA00E7FBE6 /* CameraCell.swift */; };
-		B5FDD5DD2A214D1A00E7FBE6 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5DC2A214D1A00E7FBE6 /* ParentViewController.swift */; };
 		B5FDD5E22A2219A000E7FBE6 /* OneFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5E12A2219A000E7FBE6 /* OneFrameViewController.swift */; };
 		B5FDD5E42A22207000E7FBE6 /* OneFrameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5E32A22207000E7FBE6 /* OneFrameViewModel.swift */; };
 		B5FDD5E62A22370400E7FBE6 /* UIviewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5E52A22370400E7FBE6 /* UIviewController + ext.swift */; };
@@ -44,7 +43,6 @@
 		B5FDD5D42A21436800E7FBE6 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		B5FDD5D72A21444F00E7FBE6 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		B5FDD5DA2A2144FA00E7FBE6 /* CameraCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCell.swift; sourceTree = "<group>"; };
-		B5FDD5DC2A214D1A00E7FBE6 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		B5FDD5E12A2219A000E7FBE6 /* OneFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneFrameViewController.swift; sourceTree = "<group>"; };
 		B5FDD5E32A22207000E7FBE6 /* OneFrameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneFrameViewModel.swift; sourceTree = "<group>"; };
 		B5FDD5E52A22370400E7FBE6 /* UIviewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIviewController + ext.swift"; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				B5FDD5DE2A2201C500E7FBE6 /* ListCamerasScreen */,
 				B5FDD5E02A22197600E7FBE6 /* OneFrameScreen */,
 				B5FDD5DF2A2201DA00E7FBE6 /* Model */,
-				B5FDD5D62A21444600E7FBE6 /* Component */,
 				B558BB712A1E0F86007451EB /* Service */,
 				B5FDD5D32A21435C00E7FBE6 /* Extension */,
 				B5FDD5D22A1F1F9E00E7FBE6 /* Resource */,
@@ -136,7 +133,6 @@
 			children = (
 				B5FDD5D92A2144E800E7FBE6 /* Cell */,
 				B5FDD5D72A21444F00E7FBE6 /* FooterView.swift */,
-				B5FDD5DC2A214D1A00E7FBE6 /* ParentViewController.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -152,6 +148,7 @@
 		B5FDD5DE2A2201C500E7FBE6 /* ListCamerasScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B5FDD5D62A21444600E7FBE6 /* Component */,
 				B558BB5F2A1E0EFA007451EB /* ListCamerasViewController.swift */,
 				B5FDD5CF2A1F1E7600E7FBE6 /* ListCamerasViewModel.swift */,
 			);
@@ -259,7 +256,6 @@
 				B558BB702A1E0F63007451EB /* NetworkService.swift in Sources */,
 				B5FDD5E22A2219A000E7FBE6 /* OneFrameViewController.swift in Sources */,
 				B5FDD5D82A21444F00E7FBE6 /* FooterView.swift in Sources */,
-				B5FDD5DD2A214D1A00E7FBE6 /* ParentViewController.swift in Sources */,
 				B558BB5E2A1E0EFA007451EB /* SceneDelegate.swift in Sources */,
 				B5FDD5E42A22207000E7FBE6 /* OneFrameViewModel.swift in Sources */,
 				B558BB772A1E0FB8007451EB /* Event.swift in Sources */,

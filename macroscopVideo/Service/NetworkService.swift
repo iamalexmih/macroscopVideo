@@ -44,7 +44,6 @@ final class NetworkService: NetworkServiceProtocol {
             return
         }
         
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -78,7 +77,6 @@ final class NetworkService: NetworkServiceProtocol {
             return
         }
         
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
