@@ -89,8 +89,9 @@ extension OneFrameViewController {
             loadIndicate.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             
             containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            containerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 2),
-            containerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3.5),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            containerView.heightAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.6),
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             imageOneFrame.topAnchor.constraint(equalTo: containerView.topAnchor),
