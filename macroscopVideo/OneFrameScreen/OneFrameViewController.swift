@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class OneFrameViewController: UIViewController {
+final class OneFrameViewController: UIViewController {
     
     var viewModel: OneFrameViewModelProtocol!
     

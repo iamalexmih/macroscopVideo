@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class ListCamerasViewController: UIViewController {
+final class ListCamerasViewController: UIViewController {
     
     var viewModel: ListCamerasViewModelProtocol!
     private let tableView = UITableView()
@@ -80,8 +80,8 @@ extension ListCamerasViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CameraCell.cellId, for: indexPath) as! CameraCell
-        let nameCamera = viewModel.listCameras[indexPath.row].name
-        cell.configureDataCell(nameCamera)
+        let camera = viewModel.listCameras[indexPath.row]
+        cell.configureDataCell(camera)
         return cell
     }
     
@@ -92,5 +92,9 @@ extension ListCamerasViewController: UITableViewDelegate, UITableViewDataSource 
         let viewModel = OneFrameViewModel(camera)
         oneFrameViewController.viewModel = viewModel
         navigationController?.pushViewController(oneFrameViewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
     }
 }

@@ -12,7 +12,7 @@ enum UrlPath: String {
     case mobile = "/mobile"
 }
 
-class ApiUrl {
+final class ApiUrl {
     static func url(_ params: [String: String], path: UrlPath) -> URL? {
         var components = URLComponents()
         components.scheme = "http"
@@ -33,8 +33,6 @@ class ApiUrl {
         var parametrs: [String: String] = [:]
         parametrs["channelid"] = cameraId
         parametrs["login"] = "root"
-        parametrs["resolutionx"] = "640"
-        parametrs["resolutiony"] = "480"
         parametrs["withcontenttype"] = "true"
         parametrs["oneframeonly"] = "true"
         return parametrs

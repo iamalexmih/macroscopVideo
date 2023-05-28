@@ -15,7 +15,7 @@ protocol ListCamerasViewModelProtocol {
 }
 
 
-class ListCamerasViewModel: ListCamerasViewModelProtocol {
+final class ListCamerasViewModel: ListCamerasViewModelProtocol {
     
     let networkService: NetworkServiceProtocol = NetworkService.shared
     var listCameras: [Channels] = []

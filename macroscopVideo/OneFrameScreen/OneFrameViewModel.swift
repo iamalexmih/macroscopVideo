@@ -17,7 +17,7 @@ protocol OneFrameViewModelProtocol {
 }
 
 
-class OneFrameViewModel: OneFrameViewModelProtocol {
+final class OneFrameViewModel: OneFrameViewModelProtocol {
     var title = ""
     private let camera: Channels
     var oneFrame: Data?

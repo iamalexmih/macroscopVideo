@@ -8,7 +8,7 @@
 import Foundation
 
 struct CamerasConfigex: Codable {
-    let Channels: [Channels]?
+    private let Channels: [Channels]?
     
     var channels: [Channels] {
         Channels ?? []
@@ -17,8 +17,8 @@ struct CamerasConfigex: Codable {
 
 
 struct Channels: Codable {
-    let Id: String?
-    let Name: String?
+    private let Id: String?
+    private let Name: String?
     
     var id: String {
         Id ?? ""

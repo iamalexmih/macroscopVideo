@@ -8,12 +8,13 @@
 import UIKit
 
 
-
-class CameraCell: UITableViewCell {
+final class CameraCell: UITableViewCell {
     
     static let cellId = "CameraCell"
     private let nameCamera = UILabel()
-    private let imageCamera = UIImageView()
+    private let imageIconCell = UIImageView()
+    private let imageViewPreview = UIImageView()
+    private let loadIndicate = UIActivityIndicatorView()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -23,30 +24,67 @@ class CameraCell: UITableViewCell {
     }
     
     
-    func configureDataCell(_ nameCamera: String) {
-        self.nameCamera.text = nameCamera
+    func configureDataCell(_ camera: Channels) {
+        nameCamera.text = camera.name
+        fetchOneFrame(camera.id)
+    }
+    
+    
+    private func fetchOneFrame(_ cameraId: String) {
+        loadIndicate.startAnimating()
+        NetworkService.shared.requestOneFrame(cameraId: cameraId) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success(let frameData):
+                    self.loadIndicate.stopAnimating()
+                    let imageFrame = UIImage(data: frameData)
+                    self.imageViewPreview.image = imageFrame
+                case .failure(_):
+                    self.loadIndicate.stopAnimating()
+                }
+            }
+        }
     }
     
     
     private func configureCell() {
         selectionStyle = .none
+        imageIconCell.image = UIImage(systemName: "video.circle.fill")
+        imageIconCell.tintColor = .gray
         
-        imageCamera.image = UIImage(systemName: "video.circle.fill")
-        imageCamera.tintColor = .gray
+        nameCamera.numberOfLines = 0
+        
+        imageViewPreview.layer.cornerRadius = 10
+        imageViewPreview.clipsToBounds = true
+        imageViewPreview.contentMode = .scaleAspectFill
+        imageViewPreview.image = UIImage(systemName: "photo.artframe")
+        imageViewPreview.tintColor = .systemGray4
+        
+        loadIndicate.hidesWhenStopped = true
         
         contentView.addSubviewAndTamic(nameCamera)
-        contentView.addSubviewAndTamic(imageCamera)
+        contentView.addSubviewAndTamic(imageIconCell)
+        contentView.addSubviewAndTamic(imageViewPreview)
+        imageViewPreview.addSubviewAndTamic(loadIndicate)
         
         NSLayoutConstraint.activate([
-            imageCamera.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            imageCamera.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imageCamera.widthAnchor.constraint(equalToConstant: 30),
-            imageCamera.heightAnchor.constraint(equalToConstant: 30),
+            imageIconCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            imageIconCell.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            imageIconCell.widthAnchor.constraint(equalToConstant: 30),
+            imageIconCell.heightAnchor.constraint(equalToConstant: 30),
             
-            nameCamera.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            nameCamera.leadingAnchor.constraint(equalTo: imageCamera.trailingAnchor, constant: 12),
-            nameCamera.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-            nameCamera.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+            nameCamera.leadingAnchor.constraint(equalTo: imageIconCell.trailingAnchor, constant: 12),
+            nameCamera.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            
+            loadIndicate.centerXAnchor.constraint(equalTo: imageViewPreview.centerXAnchor),
+            loadIndicate.centerYAnchor.constraint(equalTo: imageViewPreview.centerYAnchor),
+            
+            imageViewPreview.leadingAnchor.constraint(equalTo: nameCamera.trailingAnchor, constant: 12),
+            imageViewPreview.widthAnchor.constraint(equalToConstant: 120),
+            imageViewPreview.heightAnchor.constraint(equalTo: imageViewPreview.widthAnchor, multiplier: 0.6),
+            imageViewPreview.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            imageViewPreview.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
         ])
     }
     

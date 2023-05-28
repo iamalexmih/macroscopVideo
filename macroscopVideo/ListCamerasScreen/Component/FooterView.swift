@@ -7,7 +7,8 @@
 
 import UIKit
 
-class FooterView: UIView {
+
+final class FooterView: UIView {
     
     private var footerLabel: UILabel = {
        let label = UILabel()
