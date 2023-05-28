@@ -35,7 +35,6 @@ final class NetworkService: NetworkServiceProtocol {
     
     
     func requestOneFrame(cameraId: String, completion: @escaping (Result<Data, ApiError>) -> Void) {
-//        let url = URL(string: "http://demo.macroscop.com/mobile?&channelid=773bad89-c18a-4e7e-a70d-c2a37897a92d&login=root&resolutionx=640&resolutiony=480&withcontenttype=true&oneframeonly=true")
         let parameters = ApiUrl.oneFrameParameters(cameraId)
         let url = ApiUrl.url(parameters, path: .mobile)
         
