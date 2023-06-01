@@ -58,7 +58,9 @@ extension OneFrameViewController {
     private func setFrame() {
         guard let oneFrame = viewModel.oneFrame else { return }
         let image = UIImage(data: oneFrame)
-        guard let image = image else { return }
+        guard let image = image else {
+            print("Преобразование image не выполнено")
+            return }
         imageOneFrame.image = image
     }
     

@@ -33,7 +33,7 @@ final class ApiUrl {
         var parametrs: [String: String] = [:]
         parametrs["channelid"] = cameraId
         parametrs["login"] = "root"
-        parametrs["withcontenttype"] = "true"
+//        parametrs["withcontenttype"] = "true"
         parametrs["oneframeonly"] = "true"
         return parametrs
     }

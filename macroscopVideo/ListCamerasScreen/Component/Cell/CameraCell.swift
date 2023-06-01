@@ -38,7 +38,13 @@ final class CameraCell: UITableViewCell {
                 switch result {
                 case .success(let frameData):
                     self.loadIndicate.stopAnimating()
-                    let imageFrame = UIImage(data: frameData)
+                    // вариант с помощью параметра в запросе. Его надо расскоментировать
+//                    let imageFrame = UIImage(data: frameData)
+                    
+                    // вариант с помощью Редактирования файла.
+                    guard let frameDataEdit = EditorDataService.shared.editData(frameData) else { return }
+                    let imageFrame = UIImage(data: frameDataEdit)
+                    
                     self.imageViewPreview.image = imageFrame
                 case .failure(_):
                     self.loadIndicate.stopAnimating()

@@ -36,7 +36,11 @@ final class OneFrameViewModel: OneFrameViewModelProtocol {
                 guard let self = self else { return }
                 switch result {
                 case .success(let frameData):
-                    self.oneFrame = frameData
+                    // вариант с помощью параметра в запросе. Его надо расскоментировать
+//                    self.oneFrame = frameData
+                    
+                    // вариант с помощью Редактирования файла.
+                    self.oneFrame = EditorDataService.shared.editData(frameData)
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
                     self.eventHandler?(.error(error))

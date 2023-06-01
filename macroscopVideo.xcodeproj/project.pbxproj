@@ -17,6 +17,7 @@
 		B558BB752A1E0FA1007451EB /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558BB742A1E0FA1007451EB /* ApiError.swift */; };
 		B558BB772A1E0FB8007451EB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558BB762A1E0FB8007451EB /* Event.swift */; };
 		B558BB792A1E0FD6007451EB /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558BB782A1E0FD6007451EB /* CameraModel.swift */; };
+		B5916F752A29252B00B05714 /* EditorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F742A29252B00B05714 /* EditorData.swift */; };
 		B5FDD5D02A1F1E7600E7FBE6 /* ListCamerasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5CF2A1F1E7600E7FBE6 /* ListCamerasViewModel.swift */; };
 		B5FDD5D52A21436800E7FBE6 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5D42A21436800E7FBE6 /* UIView + ext.swift */; };
 		B5FDD5D82A21444F00E7FBE6 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDD5D72A21444F00E7FBE6 /* FooterView.swift */; };
@@ -39,6 +40,7 @@
 		B558BB742A1E0FA1007451EB /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		B558BB762A1E0FB8007451EB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B558BB782A1E0FD6007451EB /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		B5916F742A29252B00B05714 /* EditorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorData.swift; sourceTree = "<group>"; };
 		B5FDD5CF2A1F1E7600E7FBE6 /* ListCamerasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCamerasViewModel.swift; sourceTree = "<group>"; };
 		B5FDD5D42A21436800E7FBE6 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		B5FDD5D72A21444F00E7FBE6 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				B558BB722A1E0F92007451EB /* ApiUrl.swift */,
 				B558BB742A1E0FA1007451EB /* ApiError.swift */,
 				B558BB762A1E0FB8007451EB /* Event.swift */,
+				B5916F742A29252B00B05714 /* EditorData.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				B5FDD5D82A21444F00E7FBE6 /* FooterView.swift in Sources */,
 				B558BB5E2A1E0EFA007451EB /* SceneDelegate.swift in Sources */,
 				B5FDD5E42A22207000E7FBE6 /* OneFrameViewModel.swift in Sources */,
+				B5916F752A29252B00B05714 /* EditorData.swift in Sources */,
 				B558BB772A1E0FB8007451EB /* Event.swift in Sources */,
 				B558BB752A1E0FA1007451EB /* ApiError.swift in Sources */,
 				B558BB792A1E0FD6007451EB /* CameraModel.swift in Sources */,
